@@ -104,7 +104,7 @@ namespace TODO
         }
         public override string ToString()
         {
-            return $"   ---> {this.Title} <--- created: {this.Start}" +
+            return $"   ---> {this.Title} <--- created: {this.Start:dd/MM/yyyy}" +
                    Environment.NewLine +
                    $"       <<{this.Description}>>" + Environment.NewLine +
                    $"       You will be reminder at: {this.Reminder}";

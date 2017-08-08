@@ -14,7 +14,7 @@ namespace TODO
         public static List<string> LoadUsernamesAndPasswords()
         {
             List<string> allUsers = new List<string>();
-            using (StreamReader reader = new StreamReader(Constants.PathToDatabase+"/DatabaseOfUsernames.txt"))
+            using (StreamReader reader = new StreamReader(Constants.PathToDatabase + "/DatabaseOfUsernames.txt"))
             {
                 allUsers = reader.ReadToEnd()
                     .Split(new string[] { Environment.NewLine }, StringSplitOptions.RemoveEmptyEntries)
@@ -34,7 +34,7 @@ namespace TODO
                     string attrLine = reader.ReadLine();
                     if (attrLine == "---***---")
                         break;
-                    currNotebooks.Add(LoadNotebook(attrLine));                 
+                    currNotebooks.Add(LoadNotebook(attrLine));
                 }
 
                 List<ITask> currTasks = new List<ITask>();
@@ -54,7 +54,7 @@ namespace TODO
                         break;
                     currLongTermTasks.Add(LoadLongTermTask(attrLine));
                 }
-                return new User(username, password, currNotebooks,currTasks,currLongTermTasks);
+                return new User(username, password, currNotebooks, currTasks, currLongTermTasks);
             }
         }
 
@@ -71,17 +71,17 @@ namespace TODO
             if (notebookParameters[2] != "None")
             {
                 currNotes = notebookParameters[2].Split(new string[] { ",,," }, StringSplitOptions.RemoveEmptyEntries).Select(x => LoadNote(x)).ToList();
-            }     
+            }
 
             return new Notebook(title, refinednotebookParam, currNotes);
         }
 
         private static INote LoadNote(string noteParameteresString)
-        {         
-            string[] noteParameters = noteParameteresString.Split(new string[] { "***" },StringSplitOptions.RemoveEmptyEntries).ToArray();
+        {
+            string[] noteParameters = noteParameteresString.Split(new string[] { "***" }, StringSplitOptions.RemoveEmptyEntries).ToArray();
             string title = noteParameters[0];
             bool refinednoteParam = noteParameters[1] == "True";
-            var dt = DateTime.ParseExact(noteParameters[2], Constants.Formats, CultureInfo.InvariantCulture,DateTimeStyles.None);
+            var dt = DateTime.ParseExact(noteParameters[2], Constants.Formats, CultureInfo.InvariantCulture, DateTimeStyles.None);
             var content = noteParameters[3];
 
             return new Note(title, content, refinednoteParam, dt);
@@ -98,7 +98,7 @@ namespace TODO
 
             //TODO implement when reminder is not null
             DateTime dtStart = DateTime.ParseExact(subTaskParameters[3], Constants.Formats, CultureInfo.InvariantCulture, DateTimeStyles.None);
-            DateTime dtDueDate= DateTime.ParseExact(subTaskParameters[4], Constants.Formats, CultureInfo.InvariantCulture, DateTimeStyles.None);
+            DateTime dtDueDate = DateTime.ParseExact(subTaskParameters[4], Constants.Formats, CultureInfo.InvariantCulture, DateTimeStyles.None);
 
             double importancePercent = double.Parse(subTaskParameters[5]);
             string description = subTaskParameters[6];
@@ -108,23 +108,23 @@ namespace TODO
 
         private static ITask LoadTask(string taskParameteresString)
         {
-            string[] taskParameters = taskParameteresString.Split(new string[] { ":::"}, StringSplitOptions.RemoveEmptyEntries).ToArray();
+            string[] taskParameters = taskParameteresString.Split(new string[] { ":::" }, StringSplitOptions.RemoveEmptyEntries).ToArray();
             string title = taskParameters[0];
             Priority priority;
             Enum.TryParse(taskParameters[1], out priority);
             //TODO implement when reminder is not null
             DateTime dt = DateTime.ParseExact(taskParameters[3], Constants.Formats, CultureInfo.InvariantCulture, DateTimeStyles.None);
             string description = taskParameters[4];
-            return new Task(title, priority, description);
+            return new Task(title, priority, description, dt);
         }
 
         private static ILongTermTask LoadLongTermTask(string longTermTaskParametersString)
         {
             string[] longTermTaskParameters = longTermTaskParametersString.Split(new string[] { ":::" }, StringSplitOptions.RemoveEmptyEntries).ToArray();
-            
+
             string title = longTermTaskParameters[0];
 
-            Priority priority = (Priority)Enum.Parse(typeof(Priority),longTermTaskParameters[1]);
+            Priority priority = (Priority)Enum.Parse(typeof(Priority), longTermTaskParameters[1]);
 
             List<ISubTask> currSubtasks;
             if (longTermTaskParameters[2] == "None")
@@ -133,15 +133,15 @@ namespace TODO
             }
             else
             {
-             currSubtasks= longTermTaskParameters[2].Split(',').Select(x => LoadSubTask(x)).ToList();
+                currSubtasks = longTermTaskParameters[2].Split(',').Select(x => LoadSubTask(x)).ToList();
             }
             DateTime dtStart = DateTime.ParseExact(longTermTaskParameters[3], Constants.Formats, CultureInfo.InvariantCulture, DateTimeStyles.None);
             //TODO implement when reminder is not null
 
             DateTime dtEnd = DateTime.ParseExact(longTermTaskParameters[5].Trim(), Constants.Formats, CultureInfo.InvariantCulture, DateTimeStyles.None);
             string description = longTermTaskParameters[6];
-                      
-            return new LongTermTask(title, priority,dtEnd,description,dtStart,currSubtasks);
+
+            return new LongTermTask(title, priority, dtEnd, description, dtStart, currSubtasks);
         }
     }
 }
