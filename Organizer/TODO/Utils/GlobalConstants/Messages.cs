@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿
 using TODO.Engine;
 
 namespace TODO.Utils.GlobalConstants
@@ -31,12 +27,22 @@ namespace TODO.Utils.GlobalConstants
 
         internal static string InvalidTaskName()
         {
-            throw new NotImplementedException();
+            return "Task name is invalid";
         }
 
         internal static string TaskRemoved(string taskName)
         {
-            throw new NotImplementedException();
+            return $"{taskName} was removed successfuly";
+        }
+
+        internal static string NoSubtaskFound()
+        {
+            return "No subtask found";
+        }
+
+        internal static string NoLongTermTaskFound()
+        {
+            return "No long term task found";
         }
 
         public static string TaskCreated(string title)

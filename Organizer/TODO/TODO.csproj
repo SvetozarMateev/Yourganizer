@@ -52,6 +52,7 @@
     <Compile Include="Commands\TaskCommands\AddTaskCommand.cs" />
     <Compile Include="Commands\NotebookCommands\AddNotebookCommand.cs" />
     <Compile Include="Commands\NotebookCommands\AddNoteCommand.cs" />
+    <Compile Include="Commands\TaskCommands\DeleteLongTermTaskCommand.cs" />
     <Compile Include="Commands\TaskCommands\DeleteSubTaskCommand.cs" />
     <Compile Include="Commands\TaskCommands\DeleteTaskCommand.cs" />
     <Compile Include="Commands\UserCommands\LoginCommand.cs" />
@@ -94,7 +95,7 @@
     <Compile Include="StartUp.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Models\Task.cs" />
-    <Compile Include="SwitchLongTermTaskCommand.cs" />
+    <Compile Include="Commands\TaskCommands\SwitchLongTermTaskCommand.cs" />
     <Compile Include="Utils\GlobalConstants\Constants.cs" />
     <Compile Include="Utils\GlobalConstants\Messages.cs" />
     <Compile Include="Utils\Validator\Validator.cs" />

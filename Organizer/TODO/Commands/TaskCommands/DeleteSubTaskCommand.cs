@@ -1,9 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using TODO.Contracts;
 using TODO.Engine;
+using TODO.Utils.GlobalConstants;
 
 namespace TODO.Commands.TaskCommands
 {
@@ -11,13 +10,28 @@ namespace TODO.Commands.TaskCommands
     {
         public override string Execute()
         {
-            throw new NotImplementedException();
+            string longTermTaskName = this.Parameters[0];
+            string subTaskName = this.Parameters[1];
+            if (EngineMaikaTI.loggedUser.LongTermTasks.Any(x => x.Title == longTermTaskName))
+            {
+                ILongTermTask currLongTermTask = EngineMaikaTI.loggedUser.LongTermTasks.First(x => x.Title == longTermTaskName);
+                if (currLongTermTask.AllTasks.Any(x => x.Title == subTaskName))
+                {
+                    ISubTask subTaskToRemove = currLongTermTask.AllTasks.First(x => x.Title == subTaskName);
+                    currLongTermTask.AllTasks.Remove(subTaskToRemove);
+                    return Messages.TaskRemoved(subTaskName);
+                }
+                return Messages.NoSubtaskFound();
+            }
+            return Messages.NoLongTermTaskFound();
         }
 
         public override void TakeInput()
         {
             List<string> inputParameters = new List<string>();
-            //inputParameters.Add
+            inputParameters.Add("Long term task name: ");
+            inputParameters.Add("Subtask name: ");
+            this.Parameters = inputParameters;
         }
     }
 }
