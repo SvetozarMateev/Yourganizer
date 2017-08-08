@@ -104,7 +104,7 @@ namespace TODO.Models
         }
         public override string ToString()
         {
-            return $"{this.Name}: {String.Join("\n  ", this.Notes)}";
+            return $"---{this.Name}: {String.Join("\n  ", this.Notes)}";
         }
     }
 }
