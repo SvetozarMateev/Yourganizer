@@ -84,8 +84,8 @@ namespace TODO.Models
         }
         public override string ToString()
         {
-            return $"###{this.Title}### created: {this.DateOfCreation}" + Environment.NewLine +
-                   $"      {this.Content}.";
+            return $"   ###{this.Title}### created: {this.DateOfCreation:dd/MM/yyyy}" + Environment.NewLine +
+                   $"      DESCRIPTION:{this.Content}.";
         }
     }
 }
