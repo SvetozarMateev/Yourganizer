@@ -102,6 +102,7 @@ namespace TODO
             return $"{this.Title}:::{this.Priority}:::{(this.Reminder==null ? "None" : this.Reminder.ToString())}" +
                 $":::{this.Start.ToString("dd/MM/yyyy")}:::{AdditionalInformation()}:::{this.Description}";
         }
+
         public override string ToString()
         {
             return $"   ---> {this.Title} <--- created: {this.Start}" +
