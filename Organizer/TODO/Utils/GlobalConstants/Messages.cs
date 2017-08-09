@@ -1,4 +1,5 @@
 ﻿
+using System;
 using TODO.Engine;
 
 namespace TODO.Utils.GlobalConstants
@@ -15,6 +16,11 @@ namespace TODO.Utils.GlobalConstants
             return $"Note {title} added successfully !";
         }
 
+        internal static string LoggedOut()
+        {
+            throw new NotImplementedException();
+        }
+
         public static string LongTermTaskCreated(string title)
         {
             return $"Long term task {title} has been added";
@@ -25,14 +31,44 @@ namespace TODO.Utils.GlobalConstants
             return $"Sub task {title} added to {EngineMaikaTI.currentLongTermTask.Title}";
         }
 
-        internal static string InvalidTaskName()
+        public static string SuccessfulyLogged()
+        {
+            return "Successfuly logged!";
+        }
+
+        public static string WrongCredentials()
+        {
+            return "Wrong credentials!";
+        }
+
+        public static string UserCreated(string username)
+        {
+            return $"User {username} created successfuly!";
+        }
+
+        public static string InvalidTaskName()
         {
             return "Task name is invalid";
         }
 
-        internal static string TaskRemoved(string taskName)
+        public static string WrongPriority()
+        {
+            return "Wrong priority!";
+        }
+
+        public static string TaskRemoved(string taskName)
         {
             return $"{taskName} was removed successfuly";
+        }
+
+        public static string NoteAddedToFavourites()
+        {
+            return "Note added to favourites";
+        }
+
+        public static string WrongTaskName()
+        {
+            return "Wrong task name!";
         }
 
         internal static string NoSubtaskFound()
@@ -43,6 +79,11 @@ namespace TODO.Utils.GlobalConstants
         internal static string NoLongTermTaskFound()
         {
             return "No long term task found";
+        }
+
+        internal static string AddedReminderToTask(string taskName)
+        {
+            return $"Added reminder to {taskName}";
         }
 
         public static string TaskCreated(string title)
@@ -59,6 +100,12 @@ namespace TODO.Utils.GlobalConstants
         {
             return $"You don't have a notebook with this name";
         }
+
+        public static string MustCreateANotebook()
+        {
+            return "You must create a notebook first";
+        }
+
         public static string NotebookAddedToFavourites()
         {
             return "Notebook successfully added to Favourites";

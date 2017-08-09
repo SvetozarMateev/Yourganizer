@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using TODO.Engine;
+using TODO.Utils.GlobalConstants;
 
 namespace TODO.Commands
 {
@@ -23,10 +24,10 @@ namespace TODO.Commands
             {
                 SetCurrentParameters(username,password);
                
-                return "Successfully logged !";
+                return Messages.SuccessfulyLogged();
             }
 
-            return "Wrong Credentials";
+            return Messages.WrongCredentials();
         }
 
         public override void TakeInput()

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using TODO.Engine;
+using TODO.Utils.GlobalConstants;
 
 namespace TODO.Commands
 {
@@ -19,7 +20,7 @@ namespace TODO.Commands
             EngineMaikaTI.loggedUser = base.Factory.CreateUser(username, password);
             Saver.SaveUsernamesAndPasswords(username, password);
 
-            return $"User created: {username}";
+           return Messages.UserCreated(username); 
         }
 
         public override void TakeInput()

@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using TODO.Contracts;
 using TODO.Engine;
+using TODO.Utils.GlobalConstants;
 
 namespace TODO.Commands
 {
@@ -26,12 +27,12 @@ namespace TODO.Commands
                         .First(n => n.Title == noteName).IsFavourite = true;
                 }
                 else
-                    return $"Wrong Note Title !";
+                    return Messages.WrongNoteTitle();
             }
             else
-                return $"Wrong Notebook Name !";
+                return Messages.WrongNotebookName();
 
-            return $"Successfully added to favourites";
+            return Messages.NoteAddedToFavourites();
 
         }
 

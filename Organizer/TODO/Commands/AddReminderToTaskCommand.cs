@@ -39,7 +39,7 @@ namespace TODO.Commands
 
             if (!SearchForTask(taskName))
             {
-                throw new ArgumentException("You don't have a task with this name");
+                throw new ArgumentException(Messages.WrongTaskName());
             }
             EngineMaikaTI.loggedUser.Tasks.Single(x => x.Title == taskName).Reminder = reminder;
 
@@ -47,7 +47,8 @@ namespace TODO.Commands
             TimerCallback callback = new TimerCallback(reminder.Remind);
             Timer timer = new Timer(callback);
             timer.Change(EngineMaikaTI.loggedUser.Tasks.Single(x=>x.Title==taskName).Reminder.MomentToRemind, new TimeSpan(0,0,5));
-            return $"Created reminder to task: {taskName} successfully !";
+            return Messages.AddedReminderToTask(taskName);
+            //return $"Created reminder to task: {taskName} successfully !";
         }
 
         public override void TakeInput()

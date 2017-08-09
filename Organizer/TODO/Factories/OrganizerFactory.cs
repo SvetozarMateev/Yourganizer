@@ -39,7 +39,7 @@ namespace TODO.Factories
             Priority resultPriority;
             if (!Enum.TryParse(priority, true, out resultPriority))
             {
-                throw new ArgumentException("Wrong Priority");
+                throw new ArgumentException(Messages.WrongPriority());
             }
 
             return new LongTermTask(title, resultPriority, DateTime.ParseExact(end, Constants.Formats, CultureInfo.InvariantCulture, DateTimeStyles.None), description);
@@ -50,7 +50,7 @@ namespace TODO.Factories
             Priority finalPriority;
             if (!Enum.TryParse(priority, true, out finalPriority))
             {
-                throw new ArgumentException("Wrong type of priority");
+                throw new ArgumentException(Messages.WrongPriority());
             }
 
             DateTime dueDate = DateTime

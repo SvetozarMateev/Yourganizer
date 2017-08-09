@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using TODO.Engine;
+using TODO.Utils.GlobalConstants;
 
 namespace TODO.Commands
 {
@@ -15,11 +16,11 @@ namespace TODO.Commands
 
             if (EngineMaikaTI.loggedUser.Notebooks.All(x => x.Name != notebookTitle))
             {
-                return $"Wrong Notebook Title !";
+                return Messages.WrongNotebookName();
             }
                 
             EngineMaikaTI.loggedUser.Notebooks.First(x => x.Name == notebookTitle).IsFavourite = true;
-            return $"Notebook successfully added to Favourites";
+            return Messages.NotebookAddedToFavourites();
         }
 
         public override void TakeInput()

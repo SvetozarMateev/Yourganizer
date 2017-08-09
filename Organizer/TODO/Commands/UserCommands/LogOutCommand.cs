@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using TODO.Engine;
+using TODO.Utils.GlobalConstants;
 
 namespace TODO.Commands
 {
@@ -14,7 +15,7 @@ namespace TODO.Commands
         public override string Execute()
         {
             EngineMaikaTI.loggedUser = null;
-            return $"Successfully logged Out";
+            return Messages.LoggedOut();
         }
 
         public override void TakeInput()

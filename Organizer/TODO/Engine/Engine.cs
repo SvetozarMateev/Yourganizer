@@ -5,6 +5,7 @@ using TODO.Commands;
 using TODO.Commands.TaskCommands;
 using TODO.Contracts;
 using TODO.Factories;
+using TODO.Utils.GlobalConstants;
 
 namespace TODO.Engine
 {
@@ -75,7 +76,7 @@ namespace TODO.Engine
                 case "addnote":                   
                     if (loggedUser.Notebooks.Count == 0)
                     {
-                        throw new ArgumentException("You must create a notebook first");
+                        throw new ArgumentException(Messages.MustCreateANotebook());
                     }
                     command = new AddNoteCommand();
                     break;
