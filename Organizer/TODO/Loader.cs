@@ -93,8 +93,7 @@ namespace TODO
             string[] subTaskParameters = subTaskParametersString.Split(new string[] { ":::" }, StringSplitOptions.RemoveEmptyEntries).ToArray();
             string title = subTaskParameters[0];
 
-            Priority priority;
-            Enum.TryParse(subTaskParameters[1], out priority);
+            Priority priority = (Priority)Enum.Parse(typeof(Priority), subTaskParameters[1]);
 
             //TODO implement when reminder is not null
             DateTime dtStart = DateTime.ParseExact(subTaskParameters[3], Constants.Formats, CultureInfo.InvariantCulture, DateTimeStyles.None);
@@ -110,8 +109,7 @@ namespace TODO
         {
             string[] taskParameters = taskParameteresString.Split(new string[] { ":::" }, StringSplitOptions.RemoveEmptyEntries).ToArray();
             string title = taskParameters[0];
-            Priority priority;
-            Enum.TryParse(taskParameters[1], out priority);
+            Priority priority = (Priority)Enum.Parse(typeof(Priority), taskParameters[1]);
             //TODO implement when reminder is not null
             DateTime dt = DateTime.ParseExact(taskParameters[3], Constants.Formats, CultureInfo.InvariantCulture, DateTimeStyles.None);
             string description = taskParameters[4];

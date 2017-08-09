@@ -21,7 +21,5 @@
         public const string EmptyOrNullList = "List cannot be null or empty";
         public const string EmptyCollection = "This collection is currently empty or null";
         #endregion
-
-
     }
 }

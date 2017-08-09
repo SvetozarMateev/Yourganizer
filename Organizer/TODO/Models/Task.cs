@@ -5,12 +5,10 @@ using TODO.Models;
 namespace TODO
 {
     public class Task : Assignment ,ITask, ISaveable,IAssignement
-    {
-       
+    {      
         private Priority priority;
         private IReminder reminder;
      
-
         public Task(string title, Priority priority, string content, DateTime dateOfCreation = default(DateTime))
             :base(title,content,dateOfCreation)
         {      
