@@ -20,7 +20,7 @@ namespace TODO.Commands
             string priorityStr = this.Parameters[1];
             string description = this.Parameters[2];
 
-            ITask task = this.factory.CreateTask(title, priorityStr, description);
+            ITask task = this.Factory.CreateTask(title, priorityStr, description);
             EngineMaikaTI.loggedUser.AddTask(task);
 
             return Messages.TaskCreated(title);

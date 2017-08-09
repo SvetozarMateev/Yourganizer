@@ -2,9 +2,12 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using TODO.Contracts;
 using TODO.Engine;
+using TODO.Utils.GlobalConstants;
+using System.Globalization;
 
 namespace TODO.Commands
 {
@@ -17,16 +20,33 @@ namespace TODO.Commands
 
         public override string Execute()
         {
+
+            ////Note note = new Note("Homework", "I have to do my homework by the end of the week");
+            ////Notebook notebook1 = new Notebook("First Notebook");
+
+            //momentsToRemind.AddRange(EngineMaikaTI.loggedUser.Tasks.Where(t => t.Reminder != null).Select(x => x.Reminder));
+            //// momentsToRemind.AddRange(EngineMaikaTI.loggedUser.LongTermTasks.Where(t => t.Reminder != null).Select(x => x.Reminder));
+            //// momentsToRemind.AddRange(EngineMaikaTI.loggedUser.LongTermTasks.Where(s => s.AllTasks.Count > 0).Select(y => y.AllTasks).Where(t => t.Reminder != null).Select(x => x.Reminder));
+
+           
+
             string taskName = base.Parameters[0];
             string momentToRemind = base.Parameters[1];
 
-            IReminder reminder = this.factory.CreateReminder(momentToRemind);
+            DateTime dt = DateTime.ParseExact(momentToRemind, Constants.Formats,CultureInfo.InvariantCulture, DateTimeStyles.None);
+            IReminder reminder = this.Factory.CreateReminder(dt);
+
+
             if (!SearchForTask(taskName))
             {
                 throw new ArgumentException("You don't have a task with this name");
             }
             EngineMaikaTI.loggedUser.Tasks.Single(x => x.Title == taskName).Reminder = reminder;
 
+
+            TimerCallback callback = new TimerCallback(reminder.Remind);
+            Timer timer = new Timer(callback);
+            timer.Change(EngineMaikaTI.loggedUser.Tasks.Single(x=>x.Title==taskName).Reminder.MomentToRemind, new TimeSpan(0,0,5));
             return $"Created reminder to task: {taskName} successfully !";
         }
 

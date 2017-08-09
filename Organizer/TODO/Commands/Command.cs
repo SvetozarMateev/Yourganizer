@@ -7,29 +7,32 @@ namespace TODO.Engine
 {
     public abstract class Command : ICommand
     {
-        protected List<string> parameters;
-        protected OrganizerFactory factory;
+        private List<string> parameters;
+        private OrganizerFactory factory;
 
         public Command()
         {           
-            this.factory = new OrganizerFactory();
+            this.Factory = new OrganizerFactory();
         }
 
-        public List<string> Parameters
+        protected List<string> Parameters
         {
             get
             {
                 return this.parameters;
             }
 
-            protected set
+             set
             {
                 Validator.ListCannotBeNullOrEmpty(value);
                 
                 this.parameters = value;
             }
         }
-
+        protected OrganizerFactory Factory
+        {
+            get;
+        }
         public abstract string Execute();
 
         public abstract void TakeInput();

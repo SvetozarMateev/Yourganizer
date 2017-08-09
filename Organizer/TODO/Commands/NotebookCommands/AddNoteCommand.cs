@@ -19,7 +19,7 @@ namespace TODO.Commands
         {
             string title = base.Parameters[0];
             string content = base.Parameters[1];
-            INote note = this.factory.CreateNote(title,content);
+            INote note = this.Factory.CreateNote(title,content);
             EngineMaikaTI.currentNotebook.AddNote(note);
 
             return Messages.NoteCreated(title);

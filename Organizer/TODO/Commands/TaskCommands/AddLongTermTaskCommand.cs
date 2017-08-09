@@ -19,7 +19,7 @@ namespace TODO.Commands
             string end = this.Parameters[2];
             string description = this.Parameters[3];
 
-            ILongTermTask longTermTask= base.factory.CreateLongTermTask(title,priority,end,description);
+            ILongTermTask longTermTask= base.Factory.CreateLongTermTask(title,priority,end,description);
             
             EngineMaikaTI.currentLongTermTask = longTermTask;
             EngineMaikaTI.loggedUser.AddLongTermTask(longTermTask);

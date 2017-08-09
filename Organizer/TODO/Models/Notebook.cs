@@ -9,7 +9,6 @@ namespace TODO.Models
     public class Notebook : INotebook, ISaveable
     {
         private string name;
-        private IUser user;
         private ICollection<INote> notes;
         private bool isFavourite;
 
@@ -18,7 +17,6 @@ namespace TODO.Models
             this.Name = name;
             this.Notes = notes;
             this.IsFavourite = isFavourite;
-           // this.User = EngineMaikaTI.loggedUser;
         }
 
         public bool IsFavourite
@@ -66,18 +64,6 @@ namespace TODO.Models
             }
         }
 
-       //public IUser User
-       // {
-       //     get
-       //     {
-       //         return this.user;
-       //     }
-       //     set
-       //     {
-       //         this.user = value;
-       //     }
-       // } 
-
         public void AddNote(INote note)
         {
             this.Notes.Add(note);
@@ -104,7 +90,7 @@ namespace TODO.Models
         }
         public override string ToString()
         {
-            return $"---{this.Name}: {String.Join("\n  ", this.Notes)}";
+            return $"---{this.Name}: {string.Join("\n  ", this.Notes)}";
         }
     }
 }

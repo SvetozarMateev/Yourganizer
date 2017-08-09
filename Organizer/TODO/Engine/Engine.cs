@@ -18,8 +18,10 @@ namespace TODO.Engine
 
         public void Start()
         {
+
             while (true)
             {
+
                 try
                 {
                     List<string> commands = this.ReadCommands();
@@ -39,6 +41,7 @@ namespace TODO.Engine
                         Saver.CreateUserFile(loggedUser);
                     }
                     //this.PrintReports(commandResult);
+
                 }
                 catch (Exception ex)
                 {
@@ -88,7 +91,7 @@ namespace TODO.Engine
                 case "addsubtask":
                     command = new AddSubtaskCommand();
                     break;
-                case "setremindertotask":
+                case "addremindertotask":
                     command = new AddReminderToTaskCommand();
                     break;
                 case "addnotetofavourites":

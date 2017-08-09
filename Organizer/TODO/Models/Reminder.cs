@@ -7,14 +7,14 @@ namespace TODO.Models
 {
     public class Reminder : IReminder, ISaveable
     {
-        private DateTime momentToRemind;
+        private TimeSpan momentToRemind;
 
-        public Reminder(DateTime momentToRemind)
+        public Reminder(TimeSpan momentToRemind)
         {
             this.MomentToRemind = momentToRemind;
         }
 
-        public DateTime MomentToRemind
+        public TimeSpan MomentToRemind
         {
             get
             {
@@ -26,8 +26,11 @@ namespace TODO.Models
             }
         }
 
-        public void Remind()
+        public void Remind(object state)
         {
+            Timer timer = state as Timer;
+            timer.Change(this.MomentToRemind, new TimeSpan(0,0,2));
+            Writer.RemindText("GG WP");
         }
 
         public string FormatUserInfoForDB()

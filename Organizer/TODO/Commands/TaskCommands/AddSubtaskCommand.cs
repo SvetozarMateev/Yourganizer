@@ -20,7 +20,7 @@ namespace TODO.Commands
             string end = this.Parameters[2];
             string description = this.Parameters[3];
             string importancePercent = this.Parameters[4];
-           ISubTask currSubtask= this.factory
+           ISubTask currSubtask= this.Factory
                 .CreateSubTask(title, priority, end, description, importancePercent);
             
             EngineMaikaTI.currentLongTermTask.AddSubTask(currSubtask);

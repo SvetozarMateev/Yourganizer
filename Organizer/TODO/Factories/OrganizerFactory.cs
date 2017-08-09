@@ -59,10 +59,10 @@ namespace TODO.Factories
             return new SubTask(title, finalPriority, description, dueDate, double.Parse(importancePercent));
         }
 
-        public IReminder CreateReminder(string moment)
+        public IReminder CreateReminder(DateTime dt)
         {
-            //TODO return new Reminder(moment);
-            throw new NotImplementedException();
+            TimeSpan wantedDateToRemind=dt.Subtract(DateTime.Now);
+            return new Reminder(wantedDateToRemind);
         }
     }
 }

@@ -13,5 +13,9 @@ namespace TODO
         {
             Console.WriteLine("no user logged");
         }
+        public static void RemindText(string message)
+        {
+            Console.WriteLine($"Time for {message}!");
+        }
     }
 }

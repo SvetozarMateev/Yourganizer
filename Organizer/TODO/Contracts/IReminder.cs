@@ -5,7 +5,7 @@ namespace TODO.Contracts
 {
     public interface IReminder : ISaveable
     {
-        DateTime MomentToRemind { get; }
-        void Remind();
+        TimeSpan MomentToRemind { get; }
+        void Remind(object state);
     }
 }
