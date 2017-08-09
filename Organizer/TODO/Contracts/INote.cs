@@ -2,13 +2,8 @@
 
 namespace TODO.Contracts
 {
-    public interface INote: ISaveable
-    {
-        string Title { get; }
-        string Content { get; }
-        DateTime DateOfCreation { get; }
+    public interface INote: IAssignement,ISaveable
+    {     
         bool IsFavourite { get; set; }
-
-
     }
 }

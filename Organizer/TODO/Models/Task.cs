@@ -1,54 +1,23 @@
 ﻿using System;
 using TODO.Contracts;
 using TODO.Models;
-using TODO.Utils.Validator;
 
 namespace TODO
 {
-    public class Task : ITask, ISaveable
+    public class Task : Assignment ,ITask, ISaveable,IAssignement
     {
-        private string title;
-        private string description;
+       
         private Priority priority;
         private IReminder reminder;
-        private DateTime start;
+     
 
-        public Task(string title, Priority priority, string description, DateTime start = default(DateTime), Reminder reminder = null)
-        {
-            this.Title = title;
-            this.Description = description;
-            this.Priority = priority;
-            this.Start = start;
+        public Task(string title, Priority priority, string content, DateTime dateOfCreation = default(DateTime), Reminder reminder = null)
+            :base(title,content,dateOfCreation)
+        {      
+            this.Priority = priority;          
             this.Reminder = reminder;
         }
 
-        public string Title
-        {
-            get
-            {
-                return this.title;
-            }
-            private set
-            {
-                Validator.CannotBeNullOrEmpty(value);
-
-                this.title = value;
-            }
-        }
-
-        public string Description
-        {
-            get
-            {
-                return this.description;
-            }
-            private set
-            {
-                Validator.CannotBeNullOrEmpty(value);
-
-                this.description = value;
-            }
-        }
 
         public Priority Priority
         {
@@ -74,25 +43,6 @@ namespace TODO
             }
         }
 
-        public DateTime Start
-        {
-            get
-            {
-                return this.start;
-            }
-            private set
-            {
-                if (value == default(DateTime))
-                {
-                    this.start = DateTime.Now;
-                }
-                else
-                {
-                    this.start = value;
-
-                }
-            }
-        }
         public virtual string AdditionalInformation()
         {
             return "";
@@ -100,14 +50,14 @@ namespace TODO
         public virtual string FormatUserInfoForDB()
         {
             return $"{this.Title}:::{this.Priority}:::{(this.Reminder==null ? "None" : this.Reminder.ToString())}" +
-                $":::{this.Start:dd/MM/yyyy}:::{AdditionalInformation()}:::{this.Description}";
+                $":::{this.DateOfCreation:dd/MM/yyyy}:::{AdditionalInformation()}:::{this.Content}";
         }
 
         public override string ToString()
         {
-            return $"   ---> {this.Title} <--- created: {this.Start:dd/MM/yyyy}" +
+            return $"   ---> {this.Title} <--- created: {this.DateOfCreation:dd/MM/yyyy}" +
                    Environment.NewLine +
-                   $"       <<{this.Description}>>" + Environment.NewLine +
+                   $"       <<{this.Content}>>" + Environment.NewLine +
                    $"       You will be reminder at: {this.Reminder}";
 
         }

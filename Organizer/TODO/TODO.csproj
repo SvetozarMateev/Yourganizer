@@ -59,6 +59,7 @@
     <Compile Include="Commands\UserCommands\LogOutCommand.cs" />
     <Compile Include="Commands\UserCommands\RegisterCommand.cs" />
     <Compile Include="Commands\NotebookCommands\SwitchNotebookCommand.cs" />
+    <Compile Include="Contracts\IAssignement.cs" />
     <Compile Include="Contracts\ICredentials.cs" />
     <Compile Include="Contracts\ILongTermTask.cs" />
     <Compile Include="Contracts\INote.cs" />
@@ -82,6 +83,7 @@
     <Compile Include="Factories\IOrganizerFactory.cs" />
     <Compile Include="Factories\OrganizerFactory.cs" />
     <Compile Include="Loader.cs" />
+    <Compile Include="Models\Assignment.cs" />
     <Compile Include="Models\Enums\PasswordStrength.cs" />
     <Compile Include="Models\LongTermTask.cs" />
     <Compile Include="Models\Note.cs" />
