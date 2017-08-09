@@ -36,7 +36,7 @@ namespace TODO
                         break;
                     currNotebooks.Add(LoadNotebook(attrLine));
                 }
-
+                
                 List<ITask> currTasks = new List<ITask>();
                 while (true)
                 {
