@@ -11,10 +11,15 @@ namespace TODO
         private IReminder reminder;
      
 
-        public Task(string title, Priority priority, string content, DateTime dateOfCreation = default(DateTime), Reminder reminder = null)
+        public Task(string title, Priority priority, string content, DateTime dateOfCreation = default(DateTime))
             :base(title,content,dateOfCreation)
         {      
             this.Priority = priority;          
+            this.Reminder = reminder;
+        }
+        public Task(string title, Priority priority, string content,Reminder reminder, DateTime dateOfCreation = default(DateTime))
+            : this(title, priority, content, dateOfCreation)
+        {
             this.Reminder = reminder;
         }
 

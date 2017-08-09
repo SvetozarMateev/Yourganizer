@@ -15,7 +15,10 @@ namespace TODO
         }
         public static void RemindText(string message)
         {
+            int oldSize = Console.CursorSize;
+            Console.CursorSize = 50;           
             Console.WriteLine($"Time for {message}!");
+            Console.CursorSize = oldSize;
         }
     }
 }

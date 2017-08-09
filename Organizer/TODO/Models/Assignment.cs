@@ -53,7 +53,7 @@ namespace TODO.Models
             {
                 return this.dateOfCreation;
             }
-            private set
+            protected set
             {
                 if (value == default(DateTime))
                 {
