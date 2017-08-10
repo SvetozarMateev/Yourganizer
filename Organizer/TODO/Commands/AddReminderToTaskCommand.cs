@@ -45,8 +45,9 @@ namespace TODO.Commands
 
 
             TimerCallback callback = new TimerCallback(reminder.Remind);
-            Timer timer = new Timer(callback);
-            timer.Change(EngineMaikaTI.loggedUser.Tasks.Single(x=>x.Title==taskName).Reminder.MomentToRemind, new TimeSpan(0,0,5));
+            Timer timer = new Timer(callback,null, EngineMaikaTI.loggedUser.Tasks.Single(x => x.Title == taskName).Reminder.MomentToRemind, TimeSpan.FromMilliseconds(-1));
+            //
+            //timer.Change();
             return Messages.AddedReminderToTask(taskName);
             //return $"Created reminder to task: {taskName} successfully !";
         }

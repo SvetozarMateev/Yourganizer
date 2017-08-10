@@ -27,8 +27,7 @@ namespace TODO.Models
 
         public void Remind(object state)
         {
-            Timer timer = state as Timer;
-            timer.Change(this.MomentToRemind, new TimeSpan(0,0,2));
+            
             Writer.RemindText("GG WP");
         }
 
