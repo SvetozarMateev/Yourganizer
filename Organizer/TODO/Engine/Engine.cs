@@ -19,10 +19,8 @@ namespace TODO.Engine
 
         public void Start()
         {
-
             while (true)
             {
-
                 try
                 {
                     List<string> commands = this.ReadCommands();
@@ -94,8 +92,6 @@ namespace TODO.Engine
                     break;
                 case "addremindertotask":
                     command = new AddReminderToTaskCommand();
-                    currentForeground = Console.ForegroundColor;
-                    colorChange = true;
                     break;
                 case "addnotetofavourites":
                     command = new AddNoteToFavouritesCommand();
@@ -124,7 +120,6 @@ namespace TODO.Engine
 
             command.TakeInput();
             commandResult = command.Execute();
-
             Writer.WriteLine(commandResult);
         }
 
