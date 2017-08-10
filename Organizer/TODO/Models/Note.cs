@@ -33,8 +33,28 @@ namespace TODO.Models
         }
         public override string ToString()
         {
-            return $"   ###{this.Title}### created: {this.DateOfCreation:dd/MM/yyyy}" + Environment.NewLine +
-                   $"      DESCRIPTION:{this.Content}.";
+            return string.Concat(
+                new string(' ',12),"Note",new string(' ',13),
+                Environment.NewLine,
+                new string('-',29),
+                Environment.NewLine,
+                $"Name: {this.Title}",
+                Environment.NewLine,
+                $"{(this.IsFavourite==true?"Favourite":"Not favourite")}",
+                Environment.NewLine,
+                "Created: ",this.DateOfCreation.ToString("HH/mm/dd/MM/yyyy"),
+                Environment.NewLine,
+                new string('_',9),"Description",new string('_',9),
+                Environment.NewLine,
+                this.Content,
+                Environment.NewLine,
+                new string('-',29),
+                Environment.NewLine);
+                
+                
+                
+                //$"   ###{this.Title}### created: {this.DateOfCreation:dd/MM/yyyy}" + Environment.NewLine +
+                  // $"      DESCRIPTION:{this.Content}.";
         }
     }
 }

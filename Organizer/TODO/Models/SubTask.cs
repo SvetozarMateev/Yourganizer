@@ -50,6 +50,10 @@ namespace TODO.Models
         public override string AdditionalInformation()
         {
             return $"{this.DueDate}:::{this.ImportancePercent}";
-        }    
+        }
+        public override string ToString()
+        {
+            return base.ToString();          
+        }
     }
 }

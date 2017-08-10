@@ -58,11 +58,16 @@ namespace TODO
 
         public override string ToString()
         {
-            return $"   ---> {this.Title} <--- created: {this.DateOfCreation:dd/MM/yyyy}" +
-                   Environment.NewLine +
-                   $"       <<{this.Content}>>" + Environment.NewLine +
-                   $"       You will be reminder at: {this.Reminder}";
-
+            return string.Concat($"Name: {this.Title}",
+                Environment.NewLine,
+                $"Created: {this.DateOfCreation.ToString("HH:mm/dd/MM/yyyy")}",
+                 Environment.NewLine,
+                 "You will be reminded at: ",$"{(this.Reminder==null?"No reminder set": $"{this.Reminder.MomentToRemind.ToString("HH:mm:ss")}")}",
+                 Environment.NewLine,
+                 new string('_', 10), "Description", new string('_', 10),
+                 Environment.NewLine,
+                 this.Content,
+                 Environment.NewLine);
         }
     }
 }

@@ -94,8 +94,7 @@ namespace TODO.Engine
                     break;
                 case "addremindertotask":
                     command = new AddReminderToTaskCommand();
-                    currentForeground = Console.ForegroundColor;
-                    colorChange = true;
+                   
                     break;
                 case "addnotetofavourites":
                     command = new AddNoteToFavouritesCommand();

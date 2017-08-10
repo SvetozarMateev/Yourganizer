@@ -1,17 +1,18 @@
 gosho goshkata123
-Work:::False:::workish***False***05/08/2017***kfjsjkfksjfskfjskjfs  sklfj skjf sjs skfs,,,molqte mooooolq***False***05/08/2017***raboti be
+Work:::False:::workish***False***05.08.2017***kfjsjkfksjfskfjskjfs  sklfj skjf sjs skfs,,,molqte mooooolq***False***05.08.2017***raboti be
  ofidgs:::False:::None
-Bravo:::True:::Liubimeca***True***07/08/2017***tova go addvam v favourites
+Bravo:::True:::Liubimeca***True***07.08.2017***tova go addvam v favourites
+Testvam to stringa:::False:::Purvi note***False***10.08.2017***Usileno testvam to stringa,,,Vtori note***False***10.08.2017***Molq se to stringa da e qk,,,Treti note***False***10.08.2017***Molq ti se budi qk to string
 ---***---
-aidebe:::Important:::None:::08/08/2017::::::bashsfdlfdkgnsd'g'slgmldsmgd
-dafad:::Important:::None:::08/08/2017::::::asfa
-aideb:::Important:::None:::08/08/2017::::::bashsfdlfdkgnsd'g'slgmldsmgd
-dafad:::Important:::None:::08/08/2017::::::asfa
-Probvam remindera:::VeryImportant:::None:::10/08/2017::::::Da proverq remindera 
-Task to test reminder:::Important:::None:::10/08/2017::::::dkdsdklaskd
-neshto:::Important:::None:::10/08/2017::::::fkefklfldfjdk
+aidebe:::Important:::None:::08.08.2017::::::bashsfdlfdkgnsd'g'slgmldsmgd
+dafad:::Important:::None:::08.08.2017::::::asfa
+aideb:::Important:::None:::08.08.2017::::::bashsfdlfdkgnsd'g'slgmldsmgd
+dafad:::Important:::None:::08.08.2017::::::asfa
+Probvam remindera:::VeryImportant:::None:::10.08.2017::::::Da proverq remindera 
+Task to test reminder:::Important:::None:::10.08.2017::::::dkdsdklaskd
+neshto:::Important:::None:::10.08.2017::::::fkefklfldfjdk
 ___***___
-i ti shte rabotish maika ti deba:::VeryImportant:::None:::05/08/2017:::None:::12/12/2020/00/00:::fjkfjdkfjkdjfkdfkjdfkj
-bachka li:::VeryImportant:::None:::05/08/2017:::None:::12/12/2020/00/00:::ldskldksldfk lskfscdlsdklskdcsldlscdlsdkl
+i ti shte rabotish maika ti deba:::VeryImportant:::None:::05.08.2017:::None:::12.12.2020.00.00:::fjkfjdkfjkdjfkdfkjdfkj
+bachka li:::VeryImportant:::None:::05.08.2017:::None:::12.12.2020.00.00:::ldskldksldfk lskfscdlsdklskdcsldlscdlsdkl
 ---***---
 
