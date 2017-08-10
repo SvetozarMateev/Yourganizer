@@ -18,7 +18,7 @@ namespace TODO.Utils.GlobalConstants
 
         internal static string LoggedOut()
         {
-            throw new NotImplementedException();
+            return $"Successfully logged out!";
         }
 
         public static string LongTermTaskCreated(string title)
@@ -122,6 +122,11 @@ namespace TODO.Utils.GlobalConstants
         public static string HistoryCleared()
         {
             return $"History Cleared";
+        }
+
+        public static string WrongEndDate()
+        {
+            return $"The end date should be before the LongTerm end date !!!";
         }
     }
 }
