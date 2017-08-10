@@ -20,7 +20,7 @@ namespace TODO.Commands
             string end = this.Parameters[2];
             string description = this.Parameters[3];
             string importancePercent = this.Parameters[4];
-           ISubTask currSubtask= this.Factory
+            ISubTask currSubtask= this.Factory
                 .CreateSubTask(title, priority, end, description, importancePercent);
             
             EngineMaikaTI.currentLongTermTask.AddSubTask(currSubtask);
@@ -34,11 +34,12 @@ namespace TODO.Commands
             inputParameters.Add(this.ReadOneLine("Title: "));
             inputParameters.Add(this.ReadOneLine("Priority: "));
             inputParameters.Add(this.ReadOneLine("End date: "));
-            string description=this.ReadOneLine("Description: ");
-            inputParameters.Add(this.ReadOneLine("Importance percent: "));
 
+            string description = this.ReadOneLine("Description: ");
             description = CheckIfThereWasLostDescription(description);
             inputParameters.Add(description);
+
+            inputParameters.Add(this.ReadOneLine("Importance percent: "));
 
             EngineMaikaTI.lastDescription = description;
             this.Parameters = inputParameters;

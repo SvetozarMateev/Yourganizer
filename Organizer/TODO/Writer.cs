@@ -4,13 +4,9 @@ namespace TODO
 {
     public class Writer
     {
-        public static void WriteLine(string message,
-            ConsoleColor background = default(ConsoleColor),    
-            ConsoleColor foreground = default(ConsoleColor))
+        public static void WriteLine(string message)
         {
             Console.WriteLine(message);
-            Console.BackgroundColor = background;
-            Console.ForegroundColor = foreground;
         }
 
         public static void ClearHistory()

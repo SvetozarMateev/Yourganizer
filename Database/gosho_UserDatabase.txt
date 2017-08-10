@@ -1,17 +1,21 @@
 gosho goshkata123
-Work:::False:::workish***False***05/08/2017***kfjsjkfksjfskfjskjfs  sklfj skjf sjs skfs,,,molqte mooooolq***False***05/08/2017***raboti be
+Work:::False:::workish***False***05.08.2017***kfjsjkfksjfskfjskjfs  sklfj skjf sjs skfs,,,molqte mooooolq***False***05.08.2017***raboti be
  ofidgs:::False:::None
-Bravo:::True:::Liubimeca***True***07/08/2017***tova go addvam v favourites
+Bravo:::True:::Liubimeca***True***07.08.2017***tova go addvam v favourites
+edno:::False:::Dve Tri***False***10.08.2017***Chetiri Pet
 ---***---
-aidebe:::Important:::None:::08/08/2017::::::bashsfdlfdkgnsd'g'slgmldsmgd
-dafad:::Important:::None:::08/08/2017::::::asfa
-aideb:::Important:::None:::08/08/2017::::::bashsfdlfdkgnsd'g'slgmldsmgd
-dafad:::Important:::None:::08/08/2017::::::asfa
-Probvam remindera:::VeryImportant:::None:::10/08/2017::::::Da proverq remindera 
-Task to test reminder:::Important:::None:::10/08/2017::::::dkdsdklaskd
-neshto:::Important:::None:::10/08/2017::::::fkefklfldfjdk
+aidebe:::Important:::None:::08.08.2017::::::bashsfdlfdkgnsd'g'slgmldsmgd
+dafad:::Important:::None:::08.08.2017::::::asfa
+aideb:::Important:::None:::08.08.2017::::::bashsfdlfdkgnsd'g'slgmldsmgd
+dafad:::Important:::None:::08.08.2017::::::asfa
+Probvam remindera:::VeryImportant:::None:::10.08.2017::::::Da proverq remindera 
+Task to test reminder:::Important:::None:::10.08.2017::::::dkdsdklaskd
+neshto:::Important:::None:::10.08.2017::::::fkefklfldfjdk
 ___***___
-i ti shte rabotish maika ti deba:::VeryImportant:::None:::05/08/2017:::None:::12/12/2020/00/00:::fjkfjdkfjkdjfkdfkjdfkj
-bachka li:::VeryImportant:::None:::05/08/2017:::None:::12/12/2020/00/00:::ldskldksldfk lskfscdlsdklskdcsldlscdlsdkl
+i ti shte rabotish maika ti deba:::VeryImportant:::None:::05.08.2017:::   ---> Kote <--- created: 10.08.2017
+       <<male kvo shte te napravq ako ne rabotish >>
+       You will be reminder at: :::12.12.2020.00.00:::fjkfjdkfjkdjfkdfkjdfkj
+bachka li:::VeryImportant:::None:::05.08.2017:::None:::12.12.2020.00.00:::ldskldksldfk lskfscdlsdklskdcsldlscdlsdkl
+ Edno:::Important:::None:::10.08.2017:::None:::22.12.2019.00.00:::raz dva tri, raz dva tri
 ---***---
 

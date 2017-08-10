@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Globalization;
 using TODO.Contracts;
+using TODO.Engine;
 using TODO.Models;
 using TODO.Utils.GlobalConstants;
 
@@ -55,6 +56,10 @@ namespace TODO.Factories
 
             DateTime dueDate = DateTime
                 .ParseExact(end, Constants.Formats, CultureInfo.InvariantCulture, DateTimeStyles.None);
+            if (DateTime.Compare(dueDate, EngineMaikaTI.currentLongTermTask.End) == 1)
+            {
+                throw new ArgumentException(Messages.WrongEndDate());
+            }
 
             return new SubTask(title, finalPriority, description, dueDate, double.Parse(importancePercent));
         }

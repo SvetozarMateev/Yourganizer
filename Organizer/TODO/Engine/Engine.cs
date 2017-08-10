@@ -23,13 +23,13 @@ namespace TODO.Engine
             {
                 try
                 {
-                    List<string> commands = this.ReadCommands();
+                    string commands = this.ReadCommands();
 
-                    if (commands[0].Equals("exit"))
+                    if (commands.Equals("exit"))
                     {
                         break;
                     }
-                    if (string.IsNullOrEmpty(commands?[0])) // checks if its null or if the first element is nullOrEmpty
+                    if (string.IsNullOrEmpty(commands)) // checks if its null or if the first element is nullOrEmpty
                     {
                         continue;
                     }
@@ -49,9 +49,9 @@ namespace TODO.Engine
             }
         }
 
-        private void ProcessCommands(List<string> commands)
+        private void ProcessCommands(string commands)
         {
-            string commandType = commands[0];
+            string commandType = String.Join(string.Empty, commands.Split());
             ICommand command = null;
             string commandResult = String.Empty;
 
@@ -99,8 +99,23 @@ namespace TODO.Engine
                 case "addnotebooktofavourites":
                     command = new AddNotebookToFavouritesCommand();
                     break;
-                case "list":
+                case "listall":
                     command = new ListCommand();
+                    break;
+                case "listtask":
+                    command = new ListTask();
+                    break;
+                case "listnotebook":
+                    command = new ListNotebookCommand();
+                    break;
+                case "listnote":
+                    command = new ListNoteCommand();
+                    break;
+                case "listlongtermtask":
+                    command = new ListLongTermTaskCommand();
+                    break;
+                case "listsubtask":
+                    command = new ListSubTaskCommand();
                     break;
                 case "switchlongtertask":
                     command = new SwitchLongTermTaskCommand();
@@ -123,14 +138,12 @@ namespace TODO.Engine
             Writer.WriteLine(commandResult);
         }
 
-        private List<string> ReadCommands()
+        private string ReadCommands()
         {
-            List<string> commands = Console.ReadLine()
-                .Split(new string[] { " ", "\t" }, StringSplitOptions.RemoveEmptyEntries)
-                .Select(x => x.ToLower())
-                .ToList();
+            string command = Console.ReadLine().ToLower().Trim();
+                
 
-            bool isUserCreatable = loggedUser == null && commands[0] != "login" && commands[0] != "register";
+            bool isUserCreatable = loggedUser == null && command != "login" && command != "register";
 
 
             if (isUserCreatable)
@@ -138,7 +151,7 @@ namespace TODO.Engine
                 Writer.NoUserLogged();
                 ReadCommands();
             }
-            return commands;
+            return command;
         }
     }
 }
