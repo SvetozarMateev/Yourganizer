@@ -76,6 +76,7 @@ namespace TODO.Utils.GlobalConstants
             return "No subtask found";
         }
 
+
         internal static string NoLongTermTaskFound()
         {
             return "No long term task found";
@@ -83,6 +84,8 @@ namespace TODO.Utils.GlobalConstants
 
         internal static string AddedReminderToTask(string taskName)
         {
+            Console.BackgroundColor = ConsoleColor.Cyan;
+            
             return $"Added reminder to {taskName}";
         }
 
@@ -110,9 +113,15 @@ namespace TODO.Utils.GlobalConstants
         {
             return "Notebook successfully added to Favourites";
         }
+
         public static string WrongNoteTitle()
         {
             return "Wrong Note Title!";
+        }
+
+        public static string HistoryCleared()
+        {
+            return $"History Cleared";
         }
     }
 }

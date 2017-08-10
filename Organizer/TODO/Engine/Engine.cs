@@ -94,6 +94,8 @@ namespace TODO.Engine
                     break;
                 case "addremindertotask":
                     command = new AddReminderToTaskCommand();
+                    currentForeground = Console.ForegroundColor;
+                    colorChange = true;
                     break;
                 case "addnotetofavourites":
                     command = new AddNoteToFavouritesCommand();
@@ -113,13 +115,17 @@ namespace TODO.Engine
                 case "deletesubtask":
                     command = new DeleteSubTaskCommand();
                     break;
+                case "clearhistory":
+                    command = new ClearHistoryCommand();
+                    break;
                 default:
                     break;
             }
 
             command.TakeInput();
             commandResult = command.Execute();
-            Console.WriteLine(commandResult);
+
+            Writer.WriteLine(commandResult);
         }
 
         private List<string> ReadCommands()

@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Commands\ClearHistoryCommand.cs" />
     <Compile Include="Commands\ListCommand.cs" />
     <Compile Include="Commands\NotebookCommands\AddNotebookToFavouritesCommand.cs" />
     <Compile Include="Commands\NotebookCommands\AddNoteToFavouritesCommand.cs" />
