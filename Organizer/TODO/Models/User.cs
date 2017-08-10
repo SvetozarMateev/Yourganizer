@@ -156,9 +156,9 @@ namespace TODO.Models
         {
             return $"__________{this.Username}__________" + Environment.NewLine +
                     $"Your Notebooks:" + Environment.NewLine +
-                    $"{String.Join("\n\n", EngineMaikaTI.loggedUser.Notebooks)}" + Environment.NewLine +
+                    $"{String.Join(Environment.NewLine, EngineMaikaTI.loggedUser.Notebooks)}" + Environment.NewLine +
                     $"Your Taks:" + Environment.NewLine +
-                    $"  {String.Join("\n", EngineMaikaTI.loggedUser.Tasks)}";
+                    $"  {String.Join(Environment.NewLine, EngineMaikaTI.loggedUser.Tasks)}";
         }
     }
 }

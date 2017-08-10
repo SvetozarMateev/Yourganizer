@@ -90,7 +90,15 @@ namespace TODO.Models
         }
         public override string ToString()
         {
-            return $"---{this.Name}: {string.Join("\n  ", this.Notes)}";
+            return string.Concat($"Notebook: {this.Name}",
+                Environment.NewLine,
+                $"{(this.IsFavourite == true ? "Favourite" : "Not favourite")}",
+                Environment.NewLine,
+                new string('_', 12), "Notes", new string('_', 12),
+                Environment.NewLine,
+                $"{(this.Notes.Count>0?string.Join(Environment.NewLine, this.Notes): "You haven't got any notes in this notebook")}",
+                Environment.NewLine);
+            
         }
     }
 }

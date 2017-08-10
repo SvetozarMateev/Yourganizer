@@ -6,7 +6,11 @@ namespace TODO
     {
         public static void WriteLine(string message)
         {
+
             Console.WriteLine(message);
+
+            Console.WriteLine(message);         
+
         }
 
         public static void ClearHistory()
